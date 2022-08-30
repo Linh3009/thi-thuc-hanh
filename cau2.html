@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cau 2</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+    let arr = [2,4,8,15,19,16,10];
+    let x = parseInt(prompt("Nhap so nguyen bat ki"));
+    let index = parseInt(prompt("Nhap vi tri"));
+    function insertNumberToArray(arr, x, index) {
+        if (index < 0 || index > arr.length) {
+            return arr;
+        } else {
+            let arrNew = new Array(arr.length + 1);
+            arrNew[index] = x;
+            for (let i = 0; i < arrNew.length; i++) {
+                if (i < index) {
+                    arrNew[i] = arr[i];
+                }
+                if (i > index) {
+                    arrNew[i] = arr[i - 1];
+                }
+            }
+            return arrNew;
+        }
+    }
+    document.write(insertNumberToArray(arr,x,index))
+
+   </script>
